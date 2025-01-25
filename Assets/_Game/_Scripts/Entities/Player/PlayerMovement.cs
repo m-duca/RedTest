@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float moveRotateSpeed;
 
+    [Header("Referências:")]
+    [SerializeField] private Animator playerMeshAnimator;
+
     // Componentes
     private Rigidbody _rb;
 
@@ -28,8 +31,17 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // Caso estiver se movendo para alguma direção, alterar a rotação do Player
-        if (_moveDirection != Vector3.zero)
+        if (_moveDirection != Vector3.zero) 
+        {
             SetNewRotation();
+            // Sinalize que o jogador está se movendo para o parâmetro do Animator
+            playerMeshAnimator.SetBool("moving", true);
+        }
+        // Caso não estiver se movendo, sinalize para o parâmetro do Animator
+        else  
+        {
+            playerMeshAnimator.SetBool("moving", false);
+        }
     }
 
     private void FixedUpdate()

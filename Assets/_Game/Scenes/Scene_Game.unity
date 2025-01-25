@@ -5165,7 +5165,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: c4df531dbf73e4945b102fd2ddd02586, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -6741,6 +6741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 60
   moveRotateSpeed: 400
+  playerMeshAnimator: {fileID: 5652705161591831232}
 --- !u!114 &7404342756954452754
 MonoBehaviour:
   m_ObjectHideFlags: 0
