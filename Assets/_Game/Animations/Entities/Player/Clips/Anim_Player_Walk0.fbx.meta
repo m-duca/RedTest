@@ -52,7 +52,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Anim_Player_Walk
+      name: Anim_Player_Walk0
       takeName: Take 001
       internalID: 1827226128182048838
       firstFrame: 0.96
