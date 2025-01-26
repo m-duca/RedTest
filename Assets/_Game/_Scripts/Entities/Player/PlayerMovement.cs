@@ -7,12 +7,12 @@ public class PlayerMovement : MonoBehaviour
     // Unity Inspector
     [Header("Configurações:")]
 
+    [Header("Referências:")]
+    [SerializeField] private Animator playerMeshAnimator;
+
     [Header("Atributos:")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float moveRotateSpeed;
-
-    [Header("Referências:")]
-    [SerializeField] private Animator playerMeshAnimator;
 
     // Componentes
     private Rigidbody _rb;
@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         var targetRotation = Quaternion.LookRotation(_moveDirection, Vector3.up);
 
         // Aplicando o Quaternion obtido, na rotação do componente Transform do Player
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, moveRotateSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, targetRotation, moveRotateSpeed * Time.deltaTime);
     }
     #endregion
 }
