@@ -790,7 +790,7 @@ MonoBehaviour:
   playerhitLayer:
     _layerIndex: 6
   enemyMeshAnimator: {fileID: 3075472683338986435}
-  hitInterval: 0
+  hitInterval: 2
 --- !u!54 &1016924142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7427,6 +7427,7 @@ GameObject:
   - component: {fileID: 7404342756954452754}
   - component: {fileID: 7404342756954452753}
   - component: {fileID: 7404342756954452755}
+  - component: {fileID: 7404342756954452756}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -7643,6 +7644,21 @@ MonoBehaviour:
   lastAttackCoolDown: 2
   comboCooldown: 1.25
   _curAttackOrder: 000000000000000000000000
+--- !u!114 &7404342756954452756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7404342756954452750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10a3f1e058bc674cbf67e6855ce1365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  legsBoxes: []
+  handsBoxes: []
+  elbowBox: []
 --- !u!1 &7420672602804760198
 GameObject:
   m_ObjectHideFlags: 0
