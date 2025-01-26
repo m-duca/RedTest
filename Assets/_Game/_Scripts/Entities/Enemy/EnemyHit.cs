@@ -11,6 +11,7 @@ public class EnemyHit : MonoBehaviour
     [SerializeField] private SingleUnityLayer playerhitLayer;
     [SerializeField] private Animator enemyMeshAnimator;
     [SerializeField] private Transform playerTransform;
+    [SerializeField] private CameraScreenShake screenShake;
 
     [Header("Intervalo:")]
     [SerializeField] private float hitInterval;
@@ -42,6 +43,9 @@ public class EnemyHit : MonoBehaviour
 
             // Executar animação de Hit
             AnimateHit();
+
+            // Tremendo a tela
+            screenShake.Shake();
         }
     }
     #endregion
