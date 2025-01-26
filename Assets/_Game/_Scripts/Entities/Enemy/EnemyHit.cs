@@ -10,6 +10,7 @@ public class EnemyHit : MonoBehaviour
     [Header("Referências:")]
     [SerializeField] private SingleUnityLayer playerhitLayer;
     [SerializeField] private Animator enemyMeshAnimator;
+    [SerializeField] private Transform playerTransform;
 
     [Header("Intervalo:")]
     [SerializeField] private float hitInterval;
@@ -30,6 +31,9 @@ public class EnemyHit : MonoBehaviour
         // Se for uma hitbox do player
         if (collision.gameObject.layer == playerhitLayer.Index) 
         {
+            // Aproxime o Jogador do Inimigo
+            playerTransform.position = Vector3.MoveTowards(playerTransform.position, gameObject.transform.position, 8f * Time.deltaTime);
+
             // Pare todas as coroutines desse script (voltam para o comportamento de provocação)
             StopAllCoroutines();
 

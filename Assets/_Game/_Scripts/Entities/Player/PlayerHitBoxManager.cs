@@ -3,8 +3,10 @@ using UnityEngine;
 public class PlayerHitBoxManager : MonoBehaviour
 {
     #region Variáveis
+    // Unity Inspector
     [Header("Configurações:")]
 
+    // Referências dos Colliders
     [Header("Hitbox Pernas:")]
     [SerializeField] private SphereCollider[] legsBoxes;
 
@@ -14,6 +16,7 @@ public class PlayerHitBoxManager : MonoBehaviour
     [Header("Cotovelo:")]
     [SerializeField] private SphereCollider[] elbowBox;
 
+    // Enumerador que será usado para determinar quais colisores queremos ativar na animação
     public enum EnableBoxes
     {
         BothHands,
@@ -26,6 +29,7 @@ public class PlayerHitBoxManager : MonoBehaviour
         All
     }
 
+    // Índices que serão usados para ativar os colisores
     public enum BoxesIndex
     {
         LeftLegIndex = 0,
@@ -37,10 +41,12 @@ public class PlayerHitBoxManager : MonoBehaviour
     #endregion
 
     #region Métodos Próprios
+    // Está sendo chamado através dos AnimationEvents das animações de ataque do Player
     private void SetHitBoxes(EnableBoxes enable) 
     {
-        //DisableBoxes();
-
+        /* Com base no enumerador informado como pârametro no AnimationEvent
+            Ative as hitboxes específicas daquela animação
+        */
         switch (enable)
         {
             case EnableBoxes.LeftLeg:
@@ -81,8 +87,10 @@ public class PlayerHitBoxManager : MonoBehaviour
         }
     }
 
+    // Sendo chamado através de AnimationEvents, após o término da animação de ataque
     private void DisableBoxes() 
     {
+        // Desativando componentes de colisão
         for (int i = 0; i < legsBoxes.Length; i++) legsBoxes[i].enabled = false;
         for (int i = 0; i < handsBoxes.Length; i++) handsBoxes[i].enabled = false;
         elbowBox[(int)BoxesIndex.ElbowIndex].enabled = false;

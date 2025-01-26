@@ -70,12 +70,12 @@ public class PlayerCombat : MonoBehaviour
         Attacking = true;
         playerMeshAnimator.SetBool("attacking", Attacking);
 
+        // Adicione o novo ataque
+        _curAttackOrder[_curAttackIndex] = attack;
+
         // Caso ainda não for o 3º ataque feito
         if (_curAttackIndex < _curAttackOrder.Length - 1) 
         {
-            // Adicione o novo ataque
-            _curAttackOrder[_curAttackIndex] = attack;
-            
             // Anime o player, com base no seu tipo
             AnimateAttack(attack);
 

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed8a367b89b410b4aaf542c3c15e351f, type: 3}
-  m_Name: Combo 5
+  m_Name: Combo 0
   m_EditorClassIdentifier: 
-  AttackOrder: 020000000200000001000000
-  comboAnimClipName: 
+  AttackOrder: 020000000100000001000000
+  comboAnimClipName: Anim_Player_Combo0
