@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 1016924137}
   - component: {fileID: 1016924138}
   - component: {fileID: 1016924139}
+  - component: {fileID: 1016924140}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -509,6 +510,21 @@ CapsuleCollider:
   m_Height: 2.2402287
   m_Direction: 1
   m_Center: {x: -0.001332283, y: 1.072875, z: 0}
+--- !u!114 &1016924140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016924136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf1f3d4d0eaccc489c289ff508577eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minTauntTime: 3
+  maxTauntTime: 8
+  enemyMeshAnimator: {fileID: 3075472683338986435}
 --- !u!1 &1067099316
 GameObject:
   m_ObjectHideFlags: 0
