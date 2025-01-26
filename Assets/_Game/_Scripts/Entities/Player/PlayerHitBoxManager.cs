@@ -37,23 +37,23 @@ public class PlayerHitBoxManager : MonoBehaviour
     #endregion
 
     #region Métodos Próprios
-    public void SetHitBoxes(EnableBoxes enable) 
+    private void SetHitBoxes(EnableBoxes enable) 
     {
-        DisableBoxes();
+        //DisableBoxes();
 
         switch (enable)
         {
             case EnableBoxes.LeftLeg:
-                handsBoxes[(int)BoxesIndex.LeftLegIndex].enabled = true;
+                legsBoxes[(int)BoxesIndex.LeftLegIndex].enabled = true;
                 break;
 
             case EnableBoxes.RightLeg:
-                handsBoxes[(int)BoxesIndex.RightLegIndex].enabled = true;
+                legsBoxes[(int)BoxesIndex.RightLegIndex].enabled = true;
                 break;
 
             case EnableBoxes.BothLegs:
-                handsBoxes[(int)BoxesIndex.LeftLegIndex].enabled = true;
-                handsBoxes[(int)BoxesIndex.RightLegIndex].enabled = true;
+                legsBoxes[(int)BoxesIndex.LeftLegIndex].enabled = true;
+                legsBoxes[(int)BoxesIndex.RightLegIndex].enabled = true;
                 break;
 
             case EnableBoxes.LeftHand:
@@ -81,7 +81,7 @@ public class PlayerHitBoxManager : MonoBehaviour
         }
     }
 
-    public void DisableBoxes() 
+    private void DisableBoxes() 
     {
         for (int i = 0; i < legsBoxes.Length; i++) legsBoxes[i].enabled = false;
         for (int i = 0; i < handsBoxes.Length; i++) handsBoxes[i].enabled = false;

@@ -128,7 +128,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 141186841}
-  - component: {fileID: 141186843}
   - component: {fileID: 141186842}
   m_Layer: 6
   m_Name: HitBox_Hand_l
@@ -169,18 +168,10 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &141186843
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141186840}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &217373827
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +181,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 217373828}
-  - component: {fileID: 217373830}
   - component: {fileID: 217373829}
   m_Layer: 6
   m_Name: HitBox_Leg_r
@@ -231,18 +221,10 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &217373830
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217373827}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +505,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 420657750}
-  - component: {fileID: 420657752}
   - component: {fileID: 420657751}
   m_Layer: 6
   m_Name: HitBox_Elbow_r
@@ -564,18 +545,10 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &420657752
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420657749}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &819937070
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +558,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 819937071}
-  - component: {fileID: 819937073}
   - component: {fileID: 819937072}
   m_Layer: 6
   m_Name: HitBox_Leg_l
@@ -626,18 +598,10 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &819937073
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819937070}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +900,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1632348613}
-  - component: {fileID: 1632348615}
   - component: {fileID: 1632348614}
   m_Layer: 6
   m_Name: HitBox_Hand_r
@@ -977,18 +940,10 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1632348615
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632348612}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &17094903948453883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,6 +2068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1770580621216669882}
   - component: {fileID: 5652705161591831232}
+  - component: {fileID: 5652705161591831233}
   m_Layer: 0
   m_Name: Mesh_player
   m_TagString: Untagged
@@ -5696,6 +5652,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5652705161591831233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430329513291495936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10a3f1e058bc674cbf67e6855ce1365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  legsBoxes:
+  - {fileID: 819937072}
+  - {fileID: 217373829}
+  handsBoxes:
+  - {fileID: 141186842}
+  - {fileID: 1632348614}
+  elbowBox:
+  - {fileID: 420657751}
 --- !u!4 &5656154233988266632
 Transform:
   m_ObjectHideFlags: 0
@@ -7427,7 +7403,6 @@ GameObject:
   - component: {fileID: 7404342756954452754}
   - component: {fileID: 7404342756954452753}
   - component: {fileID: 7404342756954452755}
-  - component: {fileID: 7404342756954452756}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -7644,21 +7619,6 @@ MonoBehaviour:
   lastAttackCoolDown: 2
   comboCooldown: 1.25
   _curAttackOrder: 000000000000000000000000
---- !u!114 &7404342756954452756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7404342756954452750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a10a3f1e058bc674cbf67e6855ce1365, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  legsBoxes: []
-  handsBoxes: []
-  elbowBox: []
 --- !u!1 &7420672602804760198
 GameObject:
   m_ObjectHideFlags: 0
