@@ -65,7 +65,7 @@ public class PlayerCombat : MonoBehaviour
     // Registra os ataques executados, com base em seu tipo enumerado
     private void RegisterNewAttack(AttackConfig.AttackType attack)
     {
-        StopCoroutine(SetInputInterval());
+        StopAllCoroutines();
 
         Attacking = true;
         playerMeshAnimator.SetBool("attacking", Attacking);
@@ -176,6 +176,8 @@ public class PlayerCombat : MonoBehaviour
     {
         yield return new WaitForSeconds(lastAttackCoolDown);
         _canAttack = true;
+        Attacking = false;
+        playerMeshAnimator.SetBool("attacking", Attacking);
     }
 
     // Cooldown após realizar um combo
@@ -183,6 +185,8 @@ public class PlayerCombat : MonoBehaviour
     {
         yield return new WaitForSeconds(comboCooldown);
         _canAttack = true;
+        Attacking = false;
+        playerMeshAnimator.SetBool("attacking", Attacking);
     }
     #endregion
     #endregion
