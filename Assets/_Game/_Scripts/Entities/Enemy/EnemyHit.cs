@@ -42,8 +42,6 @@ public class EnemyHit : MonoBehaviour
 
             // Executar animação de Hit
             AnimateHit();
-
-            StartCoroutine(SetHitInterval());
         }
     }
     #endregion
@@ -61,6 +59,8 @@ public class EnemyHit : MonoBehaviour
         if (_hitIndex < 2) _hitIndex++; // Toque a seguinte na próxima vez
         // Se for a última variação
         else _hitIndex = 0; // Toque a primeira na próxima vez
+
+        StartCoroutine(SetHitInterval());
     }
 
     // Intervalo para voltar a provocar

@@ -14,7 +14,10 @@ public class PlayerHitBoxManager : MonoBehaviour
     [SerializeField] private SphereCollider[] handsBoxes;
 
     [Header("Cotovelo:")]
-    [SerializeField] private SphereCollider[] elbowBox;
+    [SerializeField] private SphereCollider[] elbowsBoxes;
+
+    [Header("Joelho:")]
+    [SerializeField] private SphereCollider[] kneesBoxes;
 
     // Enumerador que será usado para determinar quais colisores queremos ativar na animação
     public enum EnableBoxes
@@ -25,7 +28,12 @@ public class PlayerHitBoxManager : MonoBehaviour
         BothLegs,
         LeftLeg,
         RightLeg,
-        Elbow,
+        BothElbows,
+        LeftElbow,
+        RightElbow,
+        BothKnees,
+        LeftKnee,
+        RightKnee,
         All
     }
 
@@ -36,7 +44,10 @@ public class PlayerHitBoxManager : MonoBehaviour
         RightLegIndex = 1,
         LeftHandIndex = 0,
         RightHandIndex = 1,
-        ElbowIndex = 0
+        LeftElbowIndex = 0,
+        RightElbowIndex = 1,
+        LeftKneeIndex = 0,
+        RightKneeIndex = 1,
     }
     #endregion
 
@@ -75,14 +86,37 @@ public class PlayerHitBoxManager : MonoBehaviour
                 handsBoxes[(int)BoxesIndex.RightHandIndex].enabled = true;
                 break;
 
-            case EnableBoxes.Elbow:
-                elbowBox[(int)BoxesIndex.ElbowIndex].enabled = true;
+            case EnableBoxes.LeftElbow:
+                elbowsBoxes[(int)BoxesIndex.LeftElbowIndex].enabled = true;
+                break;
+
+            case EnableBoxes.RightElbow:
+                elbowsBoxes[(int)BoxesIndex.RightElbowIndex].enabled = true;
+                break;
+
+            case EnableBoxes.BothElbows:
+                elbowsBoxes[(int)BoxesIndex.LeftElbowIndex].enabled = true;
+                elbowsBoxes[(int)BoxesIndex.RightElbowIndex].enabled = true;
+                break;
+
+            case EnableBoxes.LeftKnee:
+                kneesBoxes[(int)BoxesIndex.LeftKneeIndex].enabled = true;
+                break;
+
+            case EnableBoxes.RightKnee:
+                kneesBoxes[(int)BoxesIndex.RightKneeIndex].enabled = true;
+                break;
+
+            case EnableBoxes.BothKnees:
+                kneesBoxes[(int)BoxesIndex.LeftKneeIndex].enabled = true;
+                kneesBoxes[(int)BoxesIndex.RightKneeIndex].enabled = true;
                 break;
 
             case EnableBoxes.All:
                 for (int i = 0; i < legsBoxes.Length; i++) legsBoxes[i].enabled = true;
                 for (int i = 0; i < handsBoxes.Length; i++) handsBoxes[i].enabled = true;
-                elbowBox[(int)BoxesIndex.ElbowIndex].enabled = true;
+                for (int i = 0; i < elbowsBoxes.Length; i++) elbowsBoxes[i].enabled = true;
+                for (int i = 0; i < kneesBoxes.Length; i++) kneesBoxes[i].enabled = true;
                 break;
         }
     }
@@ -93,7 +127,8 @@ public class PlayerHitBoxManager : MonoBehaviour
         // Desativando componentes de colisão
         for (int i = 0; i < legsBoxes.Length; i++) legsBoxes[i].enabled = false;
         for (int i = 0; i < handsBoxes.Length; i++) handsBoxes[i].enabled = false;
-        elbowBox[(int)BoxesIndex.ElbowIndex].enabled = false;
+        for (int i = 0; i < elbowsBoxes.Length; i++) elbowsBoxes[i].enabled = false;
+        for (int i = 0; i < kneesBoxes.Length; i++) kneesBoxes[i].enabled = false;
     }
     #endregion
 }
