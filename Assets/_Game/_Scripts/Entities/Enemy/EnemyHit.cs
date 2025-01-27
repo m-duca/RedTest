@@ -23,6 +23,9 @@ public class EnemyHit : MonoBehaviour
     // Índice usado para a sequência de animação de levar golpes
     private int _hitIndex = 0;
 
+    // Índice usado para o SFX de hit
+    private int _sfxIndex = 0;
+
     private bool _playerIsNear = false;
     #endregion
 
@@ -57,6 +60,9 @@ public class EnemyHit : MonoBehaviour
 
             // Ativar efeito de Sangue
             bloodParticle.Play();
+
+            // Tocar Efeito Sonoro
+            PlayHitSFX();
         }
     }
     #endregion
@@ -87,6 +93,17 @@ public class EnemyHit : MonoBehaviour
         _enemyTaunt.AnimateTaunt();
 
         _playerIsNear = false;
+    }
+
+    private void PlayHitSFX() 
+    {
+        // Tocando o efeito sonoro, através do Audio Manager
+        AudioManager.Instance.PlaySFX("sfx_enemy_hit" + _sfxIndex);
+
+        // Caso tenha sido tocado a primeira variação
+        if (_sfxIndex == 0) _sfxIndex = 1; // a próxima será a segunda
+        // Caso tenha sido tocado a segunga variação
+        else _sfxIndex = 0; // a próxima será a primeira
     }
     #endregion
 }

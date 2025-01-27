@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Referências:")]
     [SerializeField] private Animator playerMeshAnimator;
+    [SerializeField] private ParticleSystem movementTrail;
 
     [Header("Atributos:")]
     [SerializeField] private float moveSpeed;
@@ -41,11 +42,14 @@ public class PlayerMovement : MonoBehaviour
             SetNewRotation();
             // Sinalize que o jogador está se movendo para o parâmetro do Animator
             playerMeshAnimator.SetBool("moving", true);
+            // Ative o Efeito de Partículas
+            movementTrail.Play();
         }
         // Caso não estiver se movendo, sinalize para o parâmetro do Animator
         else  
         {
             playerMeshAnimator.SetBool("moving", false);
+            movementTrail.Stop();
         }
     }
 

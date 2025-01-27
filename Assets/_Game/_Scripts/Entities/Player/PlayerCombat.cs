@@ -76,6 +76,9 @@ public class PlayerCombat : MonoBehaviour
         // Caso ainda não for o 3º ataque feito
         if (_curAttackIndex < _curAttackOrder.Length - 1) 
         {
+            // Tocando o SFX, com base no seu tipo
+            PlayAttackSFX(attack);
+
             // Anime o player, com base no seu tipo
             AnimateAttack(attack);
 
@@ -96,6 +99,7 @@ public class PlayerCombat : MonoBehaviour
             // Se não retornou nenhum nome de animação, não foi um combo
             if (comboCreated == null) 
             {
+                PlayAttackSFX(attack); // Tocando o SFX
                 AnimateAttack(attack); // Então, anime um ataque normal
                 StartCoroutine(SetLastAttackCooldown()); // Aplicando cooldown para o próximo ataque
             }
@@ -187,6 +191,23 @@ public class PlayerCombat : MonoBehaviour
         _canAttack = true;
         Attacking = false;
         playerMeshAnimator.SetBool("attacking", Attacking);
+    }
+    #endregion
+
+    #region SFXs
+    private void PlayAttackSFX(AttackConfig.AttackType attack) 
+    {
+        // Caso for um soco
+        if (attack == AttackConfig.AttackType.Punch)
+            AudioManager.Instance.PlaySFX("sfx_player_punch" + _punchIndex); // Toque o SFX através do AudioManager, com base no índice atual do soco
+        // Caso for um chute
+        else
+            AudioManager.Instance.PlaySFX("sfx_player_punch" + _kickIndex); // Toque o SFX através do AudioManager, com base no índice atual do chute
+    }
+
+    private void PlayComboSFX() 
+    {
+    
     }
     #endregion
     #endregion
