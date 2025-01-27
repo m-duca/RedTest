@@ -61,62 +61,62 @@ public class PlayerHitBoxManager : MonoBehaviour
         switch (enable)
         {
             case EnableBoxes.LeftLeg:
-                legsBoxes[(int)BoxesIndex.LeftLegIndex].enabled = true;
+                legsBoxes[(int)BoxesIndex.LeftLegIndex].gameObject.SetActive(true);
                 break;
 
             case EnableBoxes.RightLeg:
-                legsBoxes[(int)BoxesIndex.RightLegIndex].enabled = true;
+                legsBoxes[(int)BoxesIndex.RightLegIndex].gameObject.SetActive(true);
                 break;
 
             case EnableBoxes.BothLegs:
-                legsBoxes[(int)BoxesIndex.LeftLegIndex].enabled = true;
-                legsBoxes[(int)BoxesIndex.RightLegIndex].enabled = true;
+                legsBoxes[(int)BoxesIndex.LeftLegIndex].gameObject.SetActive(true);
+                legsBoxes[(int)BoxesIndex.RightLegIndex].gameObject.SetActive(true);
                 break;
 
             case EnableBoxes.LeftHand:
-                handsBoxes[(int)BoxesIndex.LeftHandIndex].enabled = true;
+                handsBoxes[(int)BoxesIndex.LeftHandIndex].gameObject.SetActive(true);
                 break;
 
             case EnableBoxes.RightHand:
-                handsBoxes[(int)BoxesIndex.RightHandIndex].enabled = true;
+                handsBoxes[(int)BoxesIndex.RightHandIndex].gameObject.SetActive(true);
                 break;
 
             case EnableBoxes.BothHands:
-                handsBoxes[(int)BoxesIndex.LeftHandIndex].enabled = true;
-                handsBoxes[(int)BoxesIndex.RightHandIndex].enabled = true;
+                handsBoxes[(int)BoxesIndex.LeftHandIndex].gameObject.SetActive(true);
+                handsBoxes[(int)BoxesIndex.RightHandIndex].gameObject.SetActive(true);
                 break;
 
             case EnableBoxes.LeftElbow:
-                elbowsBoxes[(int)BoxesIndex.LeftElbowIndex].enabled = true;
+                elbowsBoxes[(int)BoxesIndex.LeftElbowIndex].gameObject.SetActive(true);
                 break;
 
             case EnableBoxes.RightElbow:
-                elbowsBoxes[(int)BoxesIndex.RightElbowIndex].enabled = true;
+                elbowsBoxes[(int)BoxesIndex.RightElbowIndex].gameObject.SetActive(true);
                 break;
 
             case EnableBoxes.BothElbows:
-                elbowsBoxes[(int)BoxesIndex.LeftElbowIndex].enabled = true;
-                elbowsBoxes[(int)BoxesIndex.RightElbowIndex].enabled = true;
+                elbowsBoxes[(int)BoxesIndex.LeftElbowIndex].gameObject.SetActive(true);
+                elbowsBoxes[(int)BoxesIndex.RightElbowIndex].gameObject.SetActive(true);
                 break;
 
             case EnableBoxes.LeftKnee:
-                kneesBoxes[(int)BoxesIndex.LeftKneeIndex].enabled = true;
+                kneesBoxes[(int)BoxesIndex.LeftKneeIndex].gameObject.SetActive(true);
                 break;
 
             case EnableBoxes.RightKnee:
-                kneesBoxes[(int)BoxesIndex.RightKneeIndex].enabled = true;
+                kneesBoxes[(int)BoxesIndex.RightKneeIndex].gameObject.SetActive(true);
                 break;
 
             case EnableBoxes.BothKnees:
-                kneesBoxes[(int)BoxesIndex.LeftKneeIndex].enabled = true;
-                kneesBoxes[(int)BoxesIndex.RightKneeIndex].enabled = true;
+                kneesBoxes[(int)BoxesIndex.LeftKneeIndex].gameObject.SetActive(true);
+                kneesBoxes[(int)BoxesIndex.RightKneeIndex].gameObject.SetActive(true);
                 break;
 
             case EnableBoxes.All:
-                for (int i = 0; i < legsBoxes.Length; i++) legsBoxes[i].enabled = true;
-                for (int i = 0; i < handsBoxes.Length; i++) handsBoxes[i].enabled = true;
-                for (int i = 0; i < elbowsBoxes.Length; i++) elbowsBoxes[i].enabled = true;
-                for (int i = 0; i < kneesBoxes.Length; i++) kneesBoxes[i].enabled = true;
+                for (int i = 0; i < legsBoxes.Length; i++) legsBoxes[i].gameObject.SetActive(true);
+                for (int i = 0; i < handsBoxes.Length; i++) handsBoxes[i].gameObject.SetActive(true);
+                for (int i = 0; i < elbowsBoxes.Length; i++) elbowsBoxes[i].gameObject.SetActive(true);
+                for (int i = 0; i < kneesBoxes.Length; i++) kneesBoxes[i].gameObject.SetActive(true);
                 break;
         }
     }
@@ -125,10 +125,10 @@ public class PlayerHitBoxManager : MonoBehaviour
     private void DisableBoxes() 
     {
         // Desativando componentes de colisão
-        for (int i = 0; i < legsBoxes.Length; i++) legsBoxes[i].enabled = false;
-        for (int i = 0; i < handsBoxes.Length; i++) handsBoxes[i].enabled = false;
-        for (int i = 0; i < elbowsBoxes.Length; i++) elbowsBoxes[i].enabled = false;
-        for (int i = 0; i < kneesBoxes.Length; i++) kneesBoxes[i].enabled = false;
+        for (int i = 0; i < legsBoxes.Length; i++) legsBoxes[i].gameObject.SetActive(false);
+        for (int i = 0; i < handsBoxes.Length; i++) handsBoxes[i].gameObject.SetActive(false);
+        for (int i = 0; i < elbowsBoxes.Length; i++) elbowsBoxes[i].gameObject.SetActive(false);
+        for (int i = 0; i < kneesBoxes.Length; i++) kneesBoxes[i].gameObject.SetActive(false);
     }
     #endregion
 }

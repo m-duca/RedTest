@@ -21,6 +21,8 @@ public class EnemyHit : MonoBehaviour
 
     // Índice usado para a sequência de animação de levar golpes
     private int _hitIndex = 0;
+
+    private bool _playerIsNear = false;
     #endregion
 
     #region Métodos Unity
@@ -32,8 +34,13 @@ public class EnemyHit : MonoBehaviour
         // Se for uma hitbox do player
         if (collision.gameObject.layer == playerhitLayer.Index) 
         {
-            // Aproxime o Jogador do Inimigo
-            playerTransform.position = Vector3.MoveTowards(playerTransform.position, gameObject.transform.position, 8f * Time.deltaTime);
+            if (!_playerIsNear) 
+            {
+                // Aproxime o Jogador do Inimigo
+                playerTransform.position = Vector3.MoveTowards(playerTransform.position, gameObject.transform.position, 8f * Time.deltaTime);
+                
+                _playerIsNear = true;
+            }
 
             // Pare todas as coroutines desse script (voltam para o comportamento de provocação)
             StopAllCoroutines();
@@ -74,6 +81,8 @@ public class EnemyHit : MonoBehaviour
         yield return new WaitForSeconds(hitInterval);
         // Chame em seguida a animação de Provocação
         _enemyTaunt.AnimateTaunt();
+
+        _playerIsNear = false;
     }
     #endregion
 }
