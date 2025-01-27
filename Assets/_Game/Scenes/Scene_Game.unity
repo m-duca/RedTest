@@ -599,6 +599,65 @@ MonoBehaviour:
   AmplitudeGain: 0
   FrequencyGain: 2
   m_NoiseOffsets: {x: -176.34213, y: 107.24487, z: -159.63354}
+--- !u!1 &262187280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 262187281}
+  - component: {fileID: 262187283}
+  - component: {fileID: 262187282}
+  m_Layer: 0
+  m_Name: Ambience
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &262187281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262187280}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1551813458}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &262187282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262187280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02955ccf36665ae40b01725f649e00d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxName: sfx_machine_ambience
+--- !u!114 &262187283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262187280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02955ccf36665ae40b01725f649e00d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxName: sfx_industrial_ambience
 --- !u!1 &319698622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,6 +1383,51 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &447520919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 447520920}
+  - component: {fileID: 447520921}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &447520920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447520919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1551813458}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &447520921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447520919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59c63f5ab0aab4409d198b8cff78998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicName: music_background
 --- !u!1 &475686424
 GameObject:
   m_ObjectHideFlags: 0
@@ -5183,9 +5287,6 @@ GameObject:
   - component: {fileID: 1551813458}
   - component: {fileID: 1551813459}
   - component: {fileID: 1551813460}
-  - component: {fileID: 1551813461}
-  - component: {fileID: 1551813462}
-  - component: {fileID: 1551813463}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -5205,7 +5306,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 262187281}
+  - {fileID: 447520920}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1551813459
@@ -5233,6 +5336,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b32f79f0cce20641a80714bea10e290, type: 2}
   - {fileID: 11400000, guid: 0b22eda3f780cc7498c8c2d575f517f3, type: 2}
   - {fileID: 11400000, guid: cb9e1a4e3c3eb954dbf4649e4ea3bd37, type: 2}
+  - {fileID: 11400000, guid: 33fe17ca2b08f81439eb46f26a8fa66f, type: 2}
+  - {fileID: 11400000, guid: 5b8472ac7275c974e81192ca77944429, type: 2}
+  - {fileID: 11400000, guid: ba503564983629542936e5cfc174cd96, type: 2}
+  - {fileID: 11400000, guid: e9ec60b1bcd42974bbc88043c1773d83, type: 2}
+  - {fileID: 11400000, guid: bf2ef0a9068ea694187e2cccd4e33067, type: 2}
+  - {fileID: 11400000, guid: 2b697dd5065695e41b7ebbac835dd9f1, type: 2}
 --- !u!114 &1551813460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5245,45 +5354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49ef32d594333a4880add35b1b70a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1551813461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551813457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e59c63f5ab0aab4409d198b8cff78998, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicName: music_background
---- !u!114 &1551813462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551813457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02955ccf36665ae40b01725f649e00d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sfxName: sfx_industrial_ambience
---- !u!114 &1551813463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551813457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02955ccf36665ae40b01725f649e00d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sfxName: sfx_machine_ambience
 --- !u!1001 &1600084820
 PrefabInstance:
   m_ObjectHideFlags: 0

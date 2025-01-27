@@ -36,6 +36,9 @@ public class EnemyTaunt : MonoBehaviour
     // Executa a animação de provocação, com base no índice atual
     public void AnimateTaunt() 
     {
+        // Toque o SFX de provocação
+        PlayTauntSFX();
+
         // Parâmetro referente a variação da animação de provocar
         enemyMeshAnimator.SetInteger("tauntIndex", _tauntIndex);
 
@@ -50,5 +53,7 @@ public class EnemyTaunt : MonoBehaviour
         // Chame mais uma vez a coroutine
         StartCoroutine(SetTauntTimer());
     }
+
+    private void PlayTauntSFX() => AudioManager.Instance.PlaySFX("sfx_enemy_taunt" +  _tauntIndex);
     #endregion
 }

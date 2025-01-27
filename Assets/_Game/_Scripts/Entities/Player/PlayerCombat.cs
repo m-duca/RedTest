@@ -106,7 +106,8 @@ public class PlayerCombat : MonoBehaviour
             // Se retornou um nome, anime-o
             else 
             {
-                AnimateCombo(comboCreated);
+                PlayComboSFX(comboCreated[1]); // Tocando SFX do Combo
+                AnimateCombo(comboCreated[0]); // Animando Clip de Animação do Combo
                 StartCoroutine(SetComboCooldown()); // Aplicando cooldown para o próximo ataque
             }
 
@@ -118,7 +119,7 @@ public class PlayerCombat : MonoBehaviour
     }
 
     // Checa combo por combo, usando a sequência de golpes que foi feita
-    private string VerifyCombo()
+    private string[] VerifyCombo()
     {
         foreach (var combo in combos)
         {
@@ -132,7 +133,7 @@ public class PlayerCombat : MonoBehaviour
                 }
                 else if (attackIndex == order.Length - 1) // Caso for o último golpe e o laço não foi quebrado
                 {
-                    return combo.comboAnimClipName; // Retorne a animação que correspondente do combo
+                    return new string[] {combo.comboAnimClipName, combo.comboSfxClipName}; // Retorne a animação e sfxs correspondentes do combo
                 }
             }
         }
@@ -195,6 +196,7 @@ public class PlayerCombat : MonoBehaviour
     #endregion
 
     #region SFXs
+    // Toca efeitos sonoros dos ataques básicos
     private void PlayAttackSFX(AttackConfig.AttackType attack) 
     {
         // Caso for um soco
@@ -205,10 +207,8 @@ public class PlayerCombat : MonoBehaviour
             AudioManager.Instance.PlaySFX("sfx_player_punch" + _kickIndex); // Toque o SFX através do AudioManager, com base no índice atual do chute
     }
 
-    private void PlayComboSFX() 
-    {
-    
-    }
+    // Toca efeitos sonoros dos combos
+    private void PlayComboSFX(string sfxName) => AudioManager.Instance.PlaySFX(sfxName);
     #endregion
     #endregion
 }

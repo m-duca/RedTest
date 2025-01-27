@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8a367b89b410b4aaf542c3c15e351f, type: 3}
-  m_Name: Combo 2
+  m_Script: {fileID: 11500000, guid: 1af4e49780bcdd5408a077b596964f3b, type: 3}
+  m_Name: sfx_player_combo1
   m_EditorClassIdentifier: 
-  AttackOrder: 010000000200000002000000
-  comboAnimClipName: Anim_Player_Combo2
-  comboSfxClipName: sfx_player_combo2
+  Clip: {fileID: 8300000, guid: d8e853178c66bad4888a25c5aa6564c5, type: 3}
+  Volume: 0.5
+  Pitch: 1

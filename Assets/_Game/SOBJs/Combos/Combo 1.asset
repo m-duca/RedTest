@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackOrder: 020000000100000002000000
   comboAnimClipName: Anim_Player_Combo1
+  comboSfxClipName: sfx_player_combo1
