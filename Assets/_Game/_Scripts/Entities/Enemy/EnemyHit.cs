@@ -12,6 +12,7 @@ public class EnemyHit : MonoBehaviour
     [SerializeField] private Animator enemyMeshAnimator;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private CameraScreenShake screenShake;
+    [SerializeField] private ParticleSystem bloodParticle;
 
     [Header("Intervalo:")]
     [SerializeField] private float hitInterval;
@@ -53,6 +54,9 @@ public class EnemyHit : MonoBehaviour
 
             // Tremendo a tela
             screenShake.Shake();
+
+            // Ativar efeito de Sangue
+            bloodParticle.Play();
         }
     }
     #endregion
