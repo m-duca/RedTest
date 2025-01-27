@@ -14,7 +14,7 @@ public class SetUICombo : MonoBehaviour
         Combo4 = 3,
     }
 
-    private void Awake()
+    private void OnEnable()
     {
         // Acessando animator do mesh
         var anim = transform.Find("Grp_Mesh").gameObject.GetComponent<Animator>();

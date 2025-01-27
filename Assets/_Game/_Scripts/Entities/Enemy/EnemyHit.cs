@@ -38,13 +38,13 @@ public class EnemyHit : MonoBehaviour
         // Se for uma hitbox do player
         if (collision.gameObject.layer == playerhitLayer.Index) 
         {
-            if (!_playerIsNear) 
-            {
+           if (!_playerIsNear) 
+           {
                 // Aproxime o Jogador do Inimigo
                 playerTransform.position = Vector3.MoveTowards(playerTransform.position, gameObject.transform.position, 8f * Time.deltaTime);
                 
                 _playerIsNear = true;
-            }
+           }
 
             // Pare todas as coroutines desse script (voltam para o comportamento de provocação)
             StopAllCoroutines();
