@@ -15,6 +15,7 @@ public class EnemyHit : MonoBehaviour
     [SerializeField] private ParticleSystem bloodParticle;
     [SerializeField] private PlayerSpecial playerSpecial;
     [SerializeField] private GamePadVibration gamePadVibration;
+    [SerializeField] private AttackCounter attackCounter;
 
     [Header("Intervalo:")]
     [SerializeField] private float hitInterval;
@@ -79,6 +80,9 @@ public class EnemyHit : MonoBehaviour
 
             // Chame a coroutine que desativa a vibração
             StartCoroutine(SetVibrationInterval());
+
+            // Atualizando contador de golpes
+            attackCounter.AddAttackCounter(1);
         }
     }
     #endregion

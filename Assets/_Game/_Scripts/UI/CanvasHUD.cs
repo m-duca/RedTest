@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
+using static UnityEngine.Rendering.DebugUI;
 
 public class CanvasHUD : MonoBehaviour
 {
@@ -154,6 +155,8 @@ public class CanvasHUD : MonoBehaviour
         // Alterando escala
         rectTransEnergyBar.localScale = new Vector3(energyPercentage * _energyBarInitialScaleX, rectTransEnergyBar.localScale.y, rectTransEnergyBar.localScale.z);
     }
+
+    
     #endregion
     #endregion
 }

@@ -36,7 +36,11 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // Caso estiver atacando ou carregando ou fazendo especial, retorne para não executar as demais lógicas abaixo
-        if (_playerCombat.Attacking || _playerSpecial.IsCharging || _playerSpecial.DoingSpecial) return;
+        if (_playerCombat.Attacking || _playerSpecial.IsCharging || _playerSpecial.DoingSpecial)
+        {
+            playerMeshAnimator.SetBool("moving", false);
+            return;
+        }
 
         // Caso estiver se movendo para alguma direção, alterar a rotação do Player
         if (_moveDirection != Vector3.zero) 
