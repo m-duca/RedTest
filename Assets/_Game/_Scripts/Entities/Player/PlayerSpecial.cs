@@ -201,7 +201,8 @@ public class PlayerSpecial : MonoBehaviour
 
         StopSpecial();
     }
-
+    
+    // Para o golpe especial (é chamado também no EnemyHit)
     public void StopSpecial() 
     {
         // Zere a velocidade do Rigidbody do Player
