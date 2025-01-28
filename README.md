@@ -21,9 +21,29 @@ Projeto desenvolvido como teste prático para o processo seletivo de **Programad
 
 1.  **Assets Utilizados**
     
-    -   O objetivo do desafio é **meramente avaliar competências técnicas**, não havendo qualquer cessão de direitos autorais para uso comercial ou incorporação ao projeto oficial da empresa.
+    -   Fontes usadas:
+        https://www.dafont.com/pixelout.font
+        https://www.dafont.com/perfect-dos-vga-437.font
+        
+    -   Efeitos de Partículas:
+        https://assetstore.unity.com/packages/vfx/particles/simple-particles-fx-toon-effects-244171
+
+    -   SFXs:
+        https://danielsoundsgood.itch.io/free-deadly-kombat-sound-effects
+        Demais efeitos foram pegos através do [Pixabay (]((https://pixabay.com));, todos de licença pessoal
+
+    -   Música e Sons Ambiente:
+        https://pixabay.com/music/pulses-bad-trip-239093/
+        https://pixabay.com/sound-effects/search/industrial-ambience/
+        https://pixabay.com/sound-effects/machinery-amp-glass-ambience-223051/
+
+    -   Ícones Inputs:
+        https://hergergy.itch.io/input-prompts
+
+    -   Animações dos Meshs feitas utilizando [Mixamo (](https://www.mixamo.com);
+
   
-2.  **Considerações Finais**
+3.  **Considerações Finais**
     - Autorizo a **Red District Studios** a acessar o projeto desenvolvido na Unity (versão 6000.0.25f1)
     - Dúvidas e novas atualizações, estou a disposição podendo me chamar tanto no LinkedIn quanto pelo Discord!
     - Foi uma experiência incrível desenvolver esse projeto, fazendo com que me testasse em um tipo de gênero que tinha curiosidade há muito tempo de desenvolver. Espero que gostem do que foi feito :D
