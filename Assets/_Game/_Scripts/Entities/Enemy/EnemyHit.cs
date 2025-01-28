@@ -13,6 +13,7 @@ public class EnemyHit : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private CameraScreenShake screenShake;
     [SerializeField] private ParticleSystem bloodParticle;
+    [SerializeField] private PlayerSpecial playerSpecial;
 
     [Header("Intervalo:")]
     [SerializeField] private float hitInterval;
@@ -63,6 +64,9 @@ public class EnemyHit : MonoBehaviour
 
             // Tocar Efeito Sonoro
             PlayHitSFX();
+
+            // Adicione Energia para o Especial do Player, overTime == false (seja de imediato)
+            playerSpecial.AddEnergy(false);
         }
     }
     #endregion

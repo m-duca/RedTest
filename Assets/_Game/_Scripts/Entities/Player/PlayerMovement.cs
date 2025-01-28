@@ -35,8 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        // Caso estiver atacando ou carregando, retorne para não executar as demais lógicas abaixo
-        if (_playerCombat.Attacking || _playerSpecial.IsCharging) return;
+        // Caso estiver atacando ou carregando ou fazendo especial, retorne para não executar as demais lógicas abaixo
+        if (_playerCombat.Attacking || _playerSpecial.IsCharging || _playerSpecial.DoingSpecial) return;
 
         // Caso estiver se movendo para alguma direção, alterar a rotação do Player
         if (_moveDirection != Vector3.zero) 
@@ -57,8 +57,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Caso o player estiver atacando ou carregando
-        if (_playerCombat.Attacking || _playerSpecial.IsCharging)
+        // Caso o player estiver atacando ou carregando ou fazendo especial
+        if (_playerCombat.Attacking || _playerSpecial.IsCharging || _playerSpecial.DoingSpecial)
         {
             // Zere a velocidade do Rigidbody nos eixos da movimentação padrão (pode ter sido alterada no frame anterior)
             _rb.linearVelocity = new Vector3(0f, _rb.linearVelocity.y, 0f);
