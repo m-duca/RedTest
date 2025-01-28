@@ -111,6 +111,9 @@ public class PlayerSpecial : MonoBehaviour
         // Ativando efeito de partículas
         chargeEffect.Play();
 
+        // Toque o SFX
+        AudioManager.Instance.PlaySFX("sfx_player_charge");
+
         // Desabilitando o comportamento de ataque
         _playerCombat.StopAllCoroutines();
         _playerCombat.CanAttack = false;
