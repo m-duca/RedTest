@@ -18557,7 +18557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 56852242586695117, guid: 4d7e19c9fcb52be4bb9a8ba855ffe12d, type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.3137255
+      value: 0.19607843
       objectReference: {fileID: 0}
     - target: {fileID: 56852242586695117, guid: 4d7e19c9fcb52be4bb9a8ba855ffe12d, type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
@@ -39129,6 +39129,8 @@ MonoBehaviour:
   maxEnergy: 100
   specialDashForce: 1200
   specialInterval: 0.5
+  vibrationX: 0.123
+  vibrationY: 0.234
 --- !u!4 &7406227189143899687
 Transform:
   m_ObjectHideFlags: 0
