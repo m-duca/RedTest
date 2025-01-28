@@ -12725,7 +12725,11 @@ MonoBehaviour:
   screenShake: {fileID: 245800716}
   bloodParticle: {fileID: 177868685}
   playerSpecial: {fileID: 7404342756954452756}
+  gamePadVibration: {fileID: 7404342756954452757}
   hitInterval: 1
+  vibrationX: 0.123
+  vibrationY: 0.234
+  vibrationInterval: 0.25
 --- !u!54 &1016924142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -38890,6 +38894,7 @@ GameObject:
   - component: {fileID: 7404342756954452753}
   - component: {fileID: 7404342756954452755}
   - component: {fileID: 7404342756954452756}
+  - component: {fileID: 7404342756954452757}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -39131,6 +39136,18 @@ MonoBehaviour:
   specialInterval: 0.5
   vibrationX: 0.123
   vibrationY: 0.234
+--- !u!114 &7404342756954452757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7404342756954452750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610d406d99be852488bb847d4736efc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7406227189143899687
 Transform:
   m_ObjectHideFlags: 0

@@ -14,9 +14,15 @@ public class EnemyHit : MonoBehaviour
     [SerializeField] private CameraScreenShake screenShake;
     [SerializeField] private ParticleSystem bloodParticle;
     [SerializeField] private PlayerSpecial playerSpecial;
+    [SerializeField] private GamePadVibration gamePadVibration;
 
     [Header("Intervalo:")]
     [SerializeField] private float hitInterval;
+
+    [Header("Vibração:")]
+    [SerializeField] private float vibrationX;
+    [SerializeField] private float vibrationY;
+    [SerializeField] private float vibrationInterval;
 
     // Componentes
     private EnemyTaunt _enemyTaunt;
@@ -47,7 +53,7 @@ public class EnemyHit : MonoBehaviour
                 _playerIsNear = true;
            }
 
-            // Pare todas as coroutines desse script (voltam para o comportamento de provocação)
+            // Pare todas as coroutines desse script (voltam para o comportamento de provocação / acabam com a vibração do controle)
             StopAllCoroutines();
 
             // Pare todas as coroutines do script de provocação (chamam a animação de provocação)
@@ -67,6 +73,12 @@ public class EnemyHit : MonoBehaviour
 
             // Adicione Energia para o Especial do Player, overTime == false (seja de imediato)
             playerSpecial.AddEnergy(false);
+
+            // Ative a vibração do controle
+            gamePadVibration.SetGamePadVibration(vibrationX, vibrationY);
+
+            // Chame a coroutine que desativa a vibração
+            StartCoroutine(SetVibrationInterval());
         }
     }
     #endregion
@@ -108,6 +120,13 @@ public class EnemyHit : MonoBehaviour
         if (_sfxIndex == 0) _sfxIndex = 1; // a próxima será a segunda
         // Caso tenha sido tocado a segunga variação
         else _sfxIndex = 0; // a próxima será a primeira
+    }
+
+    // Desativa a vibração do controle depois de um intervalo
+    private IEnumerator SetVibrationInterval() 
+    {
+        yield return new WaitForSeconds(vibrationInterval);
+        gamePadVibration.SetGamePadVibration(0f, 0f);
     }
     #endregion
 }
