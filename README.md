@@ -46,5 +46,5 @@ Projeto desenvolvido como teste prático para o processo seletivo de **Programad
 
 2.  **Considerações Finais**
     - Autorizo a **Red District Studios** a acessar o projeto desenvolvido na Unity (versão 6000.0.25f1)
-    - Dúvidas e novas atualizações, estou a disposição podendo me chamar tanto no LinkedIn quanto pelo Discord!
-    - Foi uma experiência incrível desenvolver esse projeto, fazendo com que me testasse em um tipo de gênero que tinha curiosidade há muito tempo de desenvolver. Espero que gostem do que foi feito :D
+    - ❗Dúvidas e novas atualizações, estou a disposição podendo me chamar tanto no LinkedIn quanto pelo Discord
+    - Foi uma experiência incrível desenvolver esse projeto, fazendo com que me testasse em um tipo de gênero que tinha curiosidade há muito tempo de desenvolver. Espero que gostem do que foi feito 😄
