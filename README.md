@@ -22,25 +22,25 @@ Projeto desenvolvido como teste prático para o processo seletivo de **Programad
 1.  **Assets Utilizados**
     
     -   Fontes usadas:
-        https://www.dafont.com/pixelout.font
-        https://www.dafont.com/perfect-dos-vga-437.font
+        - https://www.dafont.com/pixelout.font
+        - https://www.dafont.com/perfect-dos-vga-437.font
         
     -   Efeitos de Partículas:
-        https://assetstore.unity.com/packages/vfx/particles/simple-particles-fx-toon-effects-244171
+        - https://assetstore.unity.com/packages/vfx/particles/simple-particles-fx-toon-effects-244171
 
     -   SFXs:
-        https://danielsoundsgood.itch.io/free-deadly-kombat-sound-effects
-        Demais efeitos foram pegos através do [Pixabay (]((https://pixabay.com));, todos de licença pessoal
+        - https://danielsoundsgood.itch.io/free-deadly-kombat-sound-effects
+        - Demais efeitos foram pegos através do [Pixabay](https://pixabay.com) todos de licença pessoal
 
     -   Música e Sons Ambiente:
-        https://pixabay.com/music/pulses-bad-trip-239093/
-        https://pixabay.com/sound-effects/search/industrial-ambience/
-        https://pixabay.com/sound-effects/machinery-amp-glass-ambience-223051/
+        - https://pixabay.com/music/pulses-bad-trip-239093/
+        - https://pixabay.com/sound-effects/search/industrial-ambience/
+        - https://pixabay.com/sound-effects/machinery-amp-glass-ambience-223051/
 
     -   Ícones Inputs:
-        https://hergergy.itch.io/input-prompts
+        - https://hergergy.itch.io/input-prompts
 
-    -   Animações dos Meshs feitas utilizando [Mixamo (](https://www.mixamo.com);
+    -   Animações dos Meshs feitas utilizando [Mixamo](https://www.mixamo.com)
 
   
 3.  **Considerações Finais**
