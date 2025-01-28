@@ -31,7 +31,7 @@ public class PlayerCombat : MonoBehaviour
     [HideInInspector] public bool Attacking { get; private set; }
 
     // Usado para pausa entre sequência de ataques / combos
-    private bool _canAttack = true;
+    [HideInInspector] public bool CanAttack = true;
     #endregion
 
     #region Métodos Unity
@@ -44,7 +44,7 @@ public class PlayerCombat : MonoBehaviour
     public void HandlePunchInput(InputAction.CallbackContext context)
     {
         // Caso ainda não puder atacar, retorne e não execute nada
-        if (!_canAttack) return;
+        if (!CanAttack) return;
 
         if (context.performed) 
             RegisterNewAttack(AttackConfig.AttackType.Punch);  // Adicione mais um soco para o array de golpes feitos
@@ -54,7 +54,7 @@ public class PlayerCombat : MonoBehaviour
     public void HandleKickInput(InputAction.CallbackContext context) 
     {
         // Caso ainda não puder atacar, retorne e não execute nada
-        if (!_canAttack) return;
+        if (!CanAttack) return;
 
         if (context.performed) 
             RegisterNewAttack(AttackConfig.AttackType.Kick); // Adicione mais um chute para o array de golpes feitos
@@ -91,7 +91,7 @@ public class PlayerCombat : MonoBehaviour
         else
         {
             // Desabilitando o próximo ataque (irá ser aplicado um Cooldown)
-            _canAttack = false;
+            CanAttack = false;
 
             // Verifique se foi feito um combo (caso for feito, o método irá retornar um nome de AnimationClip)
             var comboCreated = VerifyCombo();
@@ -180,7 +180,7 @@ public class PlayerCombat : MonoBehaviour
     private IEnumerator SetLastAttackCooldown()
     {
         yield return new WaitForSeconds(lastAttackCoolDown);
-        _canAttack = true;
+        CanAttack = true;
         Attacking = false;
         playerMeshAnimator.SetBool("attacking", Attacking);
     }
@@ -189,7 +189,7 @@ public class PlayerCombat : MonoBehaviour
     private IEnumerator SetComboCooldown() 
     {
         yield return new WaitForSeconds(comboCooldown);
-        _canAttack = true;
+        CanAttack = true;
         Attacking = false;
         playerMeshAnimator.SetBool("attacking", Attacking);
     }

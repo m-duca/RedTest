@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Componentes
     private Rigidbody _rb;
     private PlayerCombat _playerCombat;
+    private PlayerSpecial _playerSpecial;
 
     // Direção para controlar o movimento e rotação, sendo obtida através da manipulação dos valores de inputs
     private Vector3 _moveDirection;
@@ -29,12 +30,13 @@ public class PlayerMovement : MonoBehaviour
         // Pegando referências dos outros do componentes do gameObject
         _rb = GetComponent<Rigidbody>();
         _playerCombat = GetComponent<PlayerCombat>();
+        _playerSpecial = GetComponent<PlayerSpecial>();
     }
 
     private void Update()
     {
-        // Caso estiver atacando, retorne para não executar as demais lógicas abaixo
-        if (_playerCombat.Attacking) return;
+        // Caso estiver atacando ou carregando, retorne para não executar as demais lógicas abaixo
+        if (_playerCombat.Attacking || _playerSpecial.IsCharging) return;
 
         // Caso estiver se movendo para alguma direção, alterar a rotação do Player
         if (_moveDirection != Vector3.zero) 
@@ -55,8 +57,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Caso o player estiver atacando
-        if (_playerCombat.Attacking)
+        // Caso o player estiver atacando ou carregando
+        if (_playerCombat.Attacking || _playerSpecial.IsCharging)
         {
             // Zere a velocidade do Rigidbody nos eixos da movimentação padrão (pode ter sido alterada no frame anterior)
             _rb.linearVelocity = new Vector3(0f, _rb.linearVelocity.y, 0f);

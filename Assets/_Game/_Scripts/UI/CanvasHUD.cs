@@ -9,11 +9,14 @@ public class CanvasHUD : MonoBehaviour
 {
     #region Variáveis
     // Unity Inspector
+    [Header("Configurações:")]
+
     [Header("Referências:")]
     [SerializeField] private GameObject CombosInputsParent;
     [SerializeField] private TextMeshProUGUI tmpInputEnergy;
     [SerializeField] private TextMeshProUGUI tmpOpenCombos;
     [SerializeField] private GameObject UICombosMeshsParent;
+    [SerializeField] private RectTransform rectTransEnergyBar;
     [SerializeField] private TransitionScript transition;
 
     [Header("Valores:")]
@@ -26,6 +29,13 @@ public class CanvasHUD : MonoBehaviour
 
     // Armazenando o dispositivo atual (para conseguir adaptar as informações do HUD)
     private string _currentDevice;
+
+    // Escala inicial no Eixo X da barra de energia (será usada para calcular o valor atual)
+    private float _energyBarInitialScaleX;
+    #endregion
+
+    #region Métodos Unity
+    private void Awake() => _energyBarInitialScaleX = rectTransEnergyBar.localScale.x; // Pegando valor inicial da Escala no Eixo X
     #endregion
 
     #region Métodos Próprios
@@ -133,6 +143,16 @@ public class CanvasHUD : MonoBehaviour
             mouseInputsParent.SetActive(true);
             gamepadInputsParent.SetActive(false);
         }
+    }
+
+    // Atualiza a largura atual da barra de energia (está sendo chamado no PlayerSpecial)
+    public void SetEnergyBar(float curValue, float maxValue) 
+    {
+        // Calculando valor atual, para então modificar a escala no eixo X com base na inicial
+        float energyPercentage = curValue / maxValue;
+
+        // Alterando escala
+        rectTransEnergyBar.localScale = new Vector3(energyPercentage * _energyBarInitialScaleX, rectTransEnergyBar.localScale.y, rectTransEnergyBar.localScale.z);
     }
     #endregion
     #endregion
