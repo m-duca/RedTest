@@ -83,6 +83,16 @@ public class EnemyHit : MonoBehaviour
 
             // Atualizando contador de golpes
             attackCounter.AddAttackCounter(1);
+
+            // Caso foi um golpe especial
+            if (playerSpecial.DoingSpecial) 
+            {
+                // Pare as corutines que desabilitam o mesmo
+                playerSpecial.StopAllCoroutines();
+
+                // Pare imediatamente o golpe especial
+                playerSpecial.StopSpecial();
+            }
         }
     }
     #endregion

@@ -191,14 +191,19 @@ public class PlayerSpecial : MonoBehaviour
         AudioManager.Instance.PlaySFX("sfx_player_special");
 
         // Ative a coroutine que irá desativar o comportamento em um certo tempo
-        StartCoroutine(StopSpecial());
+        StartCoroutine(SetStopSpecialInterval());
     }
 
     // Desativa o comportamento do golpe especial depois de um intervalo
-    private IEnumerator StopSpecial() 
+    private IEnumerator SetStopSpecialInterval()
     {
         yield return new WaitForSeconds(specialInterval);
 
+        StopSpecial();
+    }
+
+    public void StopSpecial() 
+    {
         // Zere a velocidade do Rigidbody do Player
         _rb.linearVelocity = new Vector3(0f, _rb.linearVelocity.y, 0f);
 

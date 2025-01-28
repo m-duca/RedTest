@@ -9,7 +9,9 @@ public class GamePadVibration : MonoBehaviour
     // Manipula a vibração do controle
     public void SetGamePadVibration(float x, float y)
     {
-        Gamepad.current.SetMotorSpeeds(x, y);
+        // Verificando se o controle está conectado
+        if (Gamepad.current != null)
+            Gamepad.current.SetMotorSpeeds(x, y);
     }
 
     // Segurança, para não deixar o controle vibrando
