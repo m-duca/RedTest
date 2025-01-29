@@ -6,6 +6,7 @@ public class EnemyHit : MonoBehaviour
     #region Variáveis
     // Unity Inspector
     [Header("Configurações:")]
+    [SerializeField] private float nearDistance;
 
     [Header("Referências:")]
     [SerializeField] private SingleUnityLayer playerhitLayer;
@@ -46,8 +47,9 @@ public class EnemyHit : MonoBehaviour
         // Se for uma hitbox do player
         if (collision.gameObject.layer == playerhitLayer.Index) 
         {
+
             // Aproxime o jogador (Apenas se for um ataque básico)
-           if (!_playerIsNear && !playerSpecial.DoingSpecial) 
+           if (Vector3.Distance(playerTransform.transform.position, gameObject.transform.position) > nearDistance && !_playerIsNear && !playerSpecial.DoingSpecial) 
            {
                 // Aproxime o Jogador do Inimigo
                 playerTransform.position = Vector3.MoveTowards(playerTransform.position, gameObject.transform.position, 8f * Time.deltaTime);

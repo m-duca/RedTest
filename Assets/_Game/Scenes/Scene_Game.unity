@@ -29017,6 +29017,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 245800716}
     - target: {fileID: 5977009006759866145, guid: e90cd29337463394fa3a0b48a43315f5, type: 3}
+      propertyPath: nearDistance
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977009006759866145, guid: e90cd29337463394fa3a0b48a43315f5, type: 3}
       propertyPath: attackCounter
       value: 
       objectReference: {fileID: 1905359012}
