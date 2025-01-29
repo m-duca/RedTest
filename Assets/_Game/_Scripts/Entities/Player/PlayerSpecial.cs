@@ -205,9 +205,6 @@ public class PlayerSpecial : MonoBehaviour
     // Para o golpe especial (é chamado também no EnemyHit)
     public void StopSpecial() 
     {
-        // Zere a velocidade do Rigidbody do Player
-        _rb.linearVelocity = new Vector3(0f, _rb.linearVelocity.y, 0f);
-
         // Pare a animação
         DoingSpecial = false;
         playerMeshAnimator.SetBool("doingSpecial", DoingSpecial);
@@ -217,6 +214,9 @@ public class PlayerSpecial : MonoBehaviour
 
         // Habilite novamente o comportamento de golpes básicos
         _playerCombat.CanAttack = true;
+
+        // Zere a velocidade do Rigidbody do Player
+        _rb.linearVelocity = new Vector3(0f, _rb.linearVelocity.y, 0f);
     }
 
     // Aplica o dash do golpe especial, no rigidbody do Player
